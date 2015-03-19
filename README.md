@@ -1,6 +1,7 @@
 # Jekyll::Asciinema
 
 [![Build Status](https://travis-ci.org/mnuessler/jekyll-asciinema.svg?branch=master)](https://travis-ci.org/mnuessler/jekyll-asciinema)
+[![Coverage Status](https://coveralls.io/repos/mnuessler/jekyll-asciinema/badge.svg)](https://coveralls.io/r/mnuessler/jekyll-asciinema)
 
 Provides a Liquid tag for embedding asciicasts recorded with
 [asciinema](https://asciinema.org/) for use in Jekyll sites.
