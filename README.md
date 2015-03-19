@@ -2,7 +2,8 @@
 
 [![Build Status](https://travis-ci.org/mnuessler/jekyll-asciinema.svg?branch=master)](https://travis-ci.org/mnuessler/jekyll-asciinema)
 
-WIP
+Provides a Liquid tag for embedding asciicasts recorded with
+[asciinema](https://asciinema.org/) for use in Jekyll sites.
 
 ## Installation
 
@@ -22,7 +23,13 @@ Or install it yourself as:
 
 ## Usage
 
-TODO: Write usage instructions here
+Use the tag as follows in your Jekyll pages and posts:
+
+    {% asciicast 14 %}
+
+This will create the associated script tag:
+
+    <script type="text/javascript" src="https://asciinema.org/a/14.js" id="asciicast-14" async="async"></script>
 
 ## Development
 
