@@ -8,14 +8,14 @@ module Jekyll
           asciicast_id = tag_contents[0]
           render_tag(asciicast_id)
         else
-          raise ArgumentError.new <<-eos.gsub(/^ {12}/, '')
+          raise ArgumentError.new <<-EOS.undent
             Syntax error in tag 'asciicast' while parsing the following markup:
 
               #{@markup}
 
             Valid syntax:
-              {% asciicast 14 %}
-          eos
+              {% asciicast 123456 %}
+          EOS
         end
       end
 

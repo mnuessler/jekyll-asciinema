@@ -1,5 +1,5 @@
 require "jekyll/asciinema/version"
-require "jekyll/asciinema/asciinema_tag"
+require "jekyll/asciinema/asciicast_tag"
 
 module Jekyll
   module Asciinema
