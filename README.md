@@ -1,10 +1,10 @@
 # Jekyll::Asciinema
 
-[![Build Status](https://travis-ci.org/mnuessler/jekyll-asciinema.svg?branch=master)](https://travis-ci.org/mnuessler/jekyll-asciinema)
-[![Coverage Status](https://coveralls.io/repos/mnuessler/jekyll-asciinema/badge.svg)](https://coveralls.io/r/mnuessler/jekyll-asciinema)
+[![Build Status][badge-travis]][travis]
+[![Coverage Status][badge-coveralls]][coveralls]
 
-Provides a Liquid tag for embedding asciicasts recorded with
-[asciinema](https://asciinema.org/) for use in Jekyll sites.
+Provides a [Liquid][liquid] tag for embedding asciicasts recorded with
+[asciinema][asciinema] for use in [Jekyll][jekyll] sites.
 
 ## Installation
 
@@ -24,13 +24,15 @@ Or install it yourself as:
 
 ## Usage
 
-Use the tag as follows in your Jekyll pages and posts:
+Use the tag as follow in your Jekyll pages and posts:
 
-    {% asciicast 14 %}
+    {% asciicast 123 %}
 
 This will create the associated script tag:
 
-    <script type="text/javascript" src="https://asciinema.org/a/14.js" id="asciicast-14" async="async"></script>
+    <script type="text/javascript" src="https://asciinema.org/a/123.js" id="asciicast-123" async="async"></script>
+
+Replace "123" with the real ID of the asciicast to embed.
 
 ## Development
 
@@ -51,3 +53,12 @@ file to [rubygems.org](https://rubygems.org).
 3. Commit your changes (`git commit -am 'Add some feature'`)
 4. Push to the branch (`git push origin my-new-feature`)
 5. Create a new Pull Request
+
+
+[badge-travis]: https://travis-ci.org/mnuessler/jekyll-asciinema.svg?branch=master
+[badge-coveralls]: https://coveralls.io/repos/mnuessler/jekyll-asciinema/badge.svg
+[travis]: https://travis-ci.org/mnuessler/jekyll-asciinema
+[coveralls]: https://coveralls.io/r/mnuessler/jekyll-asciinema
+[liquid]: http://liquidmarkup.org "Liquid templating language"
+[asciinema]: https://asciinema.org "Asciinema"
+[jekyll]: http://jekyllrb.com "Jekyll"
