@@ -8,7 +8,7 @@ module Jekyll
           asciicast_id = tag_contents[0]
           render_tag(asciicast_id)
         else
-          raise ArgumentError.new <<-EOS.undent
+          raise ArgumentError.new <<-EOS.gsub(/^ {12}/, '')
             Syntax error in tag 'asciicast' while parsing the following markup:
 
               #{@markup}

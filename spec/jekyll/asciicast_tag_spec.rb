@@ -8,23 +8,41 @@ end
 
 describe Jekyll::Asciinema::AsciicastTag do
   let(:doc) { doc_with_content(content) }
-  let(:content)  { "{% asciicast #{asciicast} %}" }
   let(:output) do
     doc.content = content
     doc.output  = Jekyll::Renderer.new(doc.site, doc).run
   end
 
-  context "asciicast without optional parameters" do
-    let(:asciicast) { 176786 }
+  context "valid asciicast ID" do
+    let(:asciicast) { 1234 }
 
-    context "valid asciicast" do
+    context "valid tag" do
+      let(:content) { "{% asciicast #{asciicast} %}" }
+
       it "produces the correct script tag" do
         expect(output.strip).to eq(%Q{<script type="text/javascript" src="https://asciinema.org/a/#{asciicast}.js" id="asciicast-#{asciicast}" async="async"></script>})
       end
+    end
 
-      it "ignores additional whitespace" do
+    context "valid tag with additional whitespace" do
+      let(:asciicast) { 1234 }
+      let(:content) { "{% asciicast   #{asciicast}    %}" }
+
+      it "produces the correct script tag ignoring additional whitespace" do
         expect(output.strip).to eq(%Q{<script type="text/javascript" src="https://asciinema.org/a/#{asciicast}.js" id="asciicast-#{asciicast}" async="async"></script>})
       end
+    end
+  end
+
+  context "missing asciicast ID" do
+    let(:asciicast) { "" }
+    let(:content) { "{% asciicast #{asciicast} %}" }
+
+    it "throws an exception" do
+      expect { output }.to raise_error { |error|
+        expect(error).to be_a(ArgumentError)
+        expect(error.message).to match(/^Syntax error in tag 'asciicast'/)
+      }
     end
   end
 end
