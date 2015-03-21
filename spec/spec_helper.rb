@@ -5,7 +5,7 @@ if ENV['TRAVIS']
   Coveralls.wear!
 end
 
-require 'jekyll/asciinema'
+require 'jekyll-asciinema'
 
 TEST_DIR = File.dirname(__FILE__)
 TMP_DIR  = File.expand_path("../tmp", TEST_DIR)
