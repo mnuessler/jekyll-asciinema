@@ -1,6 +1,7 @@
 require "bundler/gem_tasks"
 require "rspec/core/rake_task"
 require "rake/clean"
+require 'jekyll/asciinema/version'
 
 RSpec::Core::RakeTask.new(:spec)
 
