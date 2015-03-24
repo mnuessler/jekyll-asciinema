@@ -26,11 +26,11 @@ Or install it yourself as:
 
 ## Usage
 
-Use the tag as follow in your Jekyll pages and posts:
+Use the tag as follows in your Jekyll pages and posts:
 
     {% asciicast 123 %}
 
-This will create the associated script tag:
+This will render the associated script tag:
 
     <script type="text/javascript" src="https://asciinema.org/a/123.js" id="asciicast-123" async="async"></script>
 
