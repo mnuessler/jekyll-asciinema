@@ -56,6 +56,9 @@ file to [rubygems.org](https://rubygems.org).
 4. Push to the branch (`git push origin my-new-feature`)
 5. Create a new Pull Request
 
+## License
+
+Code is under [MIT License][license].
 
 [badge-travis]: https://travis-ci.org/mnuessler/jekyll-asciinema.svg?branch=master
 [badge-coveralls]: https://coveralls.io/repos/mnuessler/jekyll-asciinema/badge.svg
@@ -68,3 +71,4 @@ file to [rubygems.org](https://rubygems.org).
 [liquid]: http://liquidmarkup.org "Liquid templating language"
 [asciinema]: https://asciinema.org "Asciinema"
 [jekyll]: http://jekyllrb.com "Jekyll"
+[license]: https://raw.githubusercontent.com/mnuessler/jekyll-asciinema/master/LICENSE.txt
