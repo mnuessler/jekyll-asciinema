@@ -41,4 +41,9 @@ RSpec.configure do |config|
     Jekyll::Site.new(conf)
   end
 
+  # Configure Rspec to accept only the new 'expect' syntax (see http://betterspecs.org/#expect)
+  config.expect_with :rspec do |c|
+    c.syntax = :expect
+  end
+
 end
