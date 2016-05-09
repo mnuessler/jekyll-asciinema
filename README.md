@@ -5,6 +5,7 @@
 [![Gem Version][badge-gem]][rubygems]
 [![Dependency Status][badge-deps]][gemnasium]
 [![Code Climate][badge-gpa]][codeclimate]
+[![Gem][badge-downloads]][rubygems]
 
 Provides a [Liquid][liquid] tag for embedding asciicasts recorded with
 [asciinema][asciinema] for use in [Jekyll][jekyll] sites.
@@ -66,6 +67,7 @@ Code is under [MIT License][license].
 [badge-gem]: https://badge.fury.io/rb/jekyll-asciinema.svg
 [badge-deps]: https://gemnasium.com/mnuessler/jekyll-asciinema.svg
 [badge-gpa]: https://codeclimate.com/github/mnuessler/jekyll-asciinema/badges/gpa.svg
+[badge-downloads]: https://img.shields.io/gem/dt/jekyll-asciinema.svg?maxAge=2592000
 [travis]: https://travis-ci.org/mnuessler/jekyll-asciinema
 [coveralls]: https://coveralls.io/r/mnuessler/jekyll-asciinema
 [rubygems]: https://rubygems.org/gems/jekyll-asciinema
