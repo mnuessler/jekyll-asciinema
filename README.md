@@ -1,6 +1,5 @@
 # Jekyll::Asciinema
-
-[![Build Status][badge-travis]][travis]
+[![.github/workflows/gem-build.yml][badge-build]][build]
 [![Gem Version][badge-gem]][rubygems]
 [![Gem][badge-dl]][rubygems]
 [![Coverage Status][badge-coveralls]][coveralls]
@@ -62,13 +61,14 @@ file to [rubygems.org](https://rubygems.org).
 
 Code is under [MIT License][license].
 
-[badge-travis]: https://travis-ci.org/mnuessler/jekyll-asciinema.svg?branch=master
+
+[badge-build]: https://github.com/mnuessler/jekyll-asciinema/actions/workflows/gem-build.yml/badge.svg
 [badge-coveralls]: https://coveralls.io/repos/mnuessler/jekyll-asciinema/badge.svg
 [badge-gem]: https://badge.fury.io/rb/jekyll-asciinema.svg
 [badge-gpa]: https://codeclimate.com/github/mnuessler/jekyll-asciinema/badges/gpa.svg
 [badge-license]: https://img.shields.io/github/license/mnuessler/jekyll-asciinema.svg?maxAge=604800
 [badge-dl]: https://img.shields.io/gem/dt/jekyll-asciinema.svg?maxAge=604800
-[travis]: https://travis-ci.org/mnuessler/jekyll-asciinema
+[build]: https://github.com/mnuessler/jekyll-asciinema/actions/workflows/gem-build.yml
 [coveralls]: https://coveralls.io/r/mnuessler/jekyll-asciinema
 [rubygems]: https://rubygems.org/gems/jekyll-asciinema
 [gemnasium]: https://gemnasium.com/mnuessler/jekyll-asciinema
