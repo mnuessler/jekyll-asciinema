@@ -1,11 +1,10 @@
 # Jekyll::Asciinema
 
 [![Build Status][badge-travis]][travis]
-[![Coverage Status][badge-coveralls]][coveralls]
 [![Gem Version][badge-gem]][rubygems]
-[![Dependency Status][badge-deps]][gemnasium]
+[![Gem][badge-dl]][rubygems]
+[![Coverage Status][badge-coveralls]][coveralls]
 [![Code Climate][badge-gpa]][codeclimate]
-[![Gem][badge-downloads]][rubygems]
 [![License][badge-license]][license]
 
 Provides a [Liquid][liquid] tag for embedding asciicasts recorded with
@@ -66,10 +65,9 @@ Code is under [MIT License][license].
 [badge-travis]: https://travis-ci.org/mnuessler/jekyll-asciinema.svg?branch=master
 [badge-coveralls]: https://coveralls.io/repos/mnuessler/jekyll-asciinema/badge.svg
 [badge-gem]: https://badge.fury.io/rb/jekyll-asciinema.svg
-[badge-deps]: https://gemnasium.com/mnuessler/jekyll-asciinema.svg
 [badge-gpa]: https://codeclimate.com/github/mnuessler/jekyll-asciinema/badges/gpa.svg
-[badge-downloads]: https://img.shields.io/gem/dt/jekyll-asciinema.svg?maxAge=604800
 [badge-license]: https://img.shields.io/github/license/mnuessler/jekyll-asciinema.svg?maxAge=604800
+[badge-dl]: https://img.shields.io/gem/dt/jekyll-asciinema.svg?maxAge=604800
 [travis]: https://travis-ci.org/mnuessler/jekyll-asciinema
 [coveralls]: https://coveralls.io/r/mnuessler/jekyll-asciinema
 [rubygems]: https://rubygems.org/gems/jekyll-asciinema
