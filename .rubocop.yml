@@ -1,0 +1,17 @@
+---
+AllCops:
+  TargetRubyVersion: 2.7
+  Exclude:
+    - 'bin/**'
+
+Layout/LineLength:
+  Max: 170
+
+BlockLength:
+  Max: 70
+
+Style/Encoding:
+  Enabled: false
+
+Style/GuardClause:
+  Enabled: false

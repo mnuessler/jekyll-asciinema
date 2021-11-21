@@ -1,21 +1,24 @@
+# frozen_string_literal: true
+
 require 'jekyll'
 
 module Jekyll
   module Asciinema
+    # Implements a Liquid tag for embedding Asciicasts.
     class AsciicastTag < Liquid::Tag
-      def render(context)
-        if tag_contents = parse_tag(@markup.strip)
+      def render(_context)
+        if (tag_contents = parse_tag(@markup.strip))
           asciicast_id = tag_contents[0]
           render_tag(asciicast_id)
         else
-          raise ArgumentError.new <<-EOS.gsub(/^ {12}/, '')
+          raise ArgumentError, <<-ERR_MSG.gsub(/^ {12}/, '')
             Syntax error in tag 'asciicast' while parsing the following markup:
 
               #{@markup}
 
             Valid syntax:
               {% asciicast 123456 %}
-          EOS
+          ERR_MSG
         end
       end
 
@@ -27,7 +30,7 @@ module Jekyll
       end
 
       def render_tag(asciicast_id)
-         %Q{<script src="https://asciinema.org/a/#{asciicast_id}.js" id="asciicast-#{asciicast_id}" async="async"></script>}
+        %(<script src="https://asciinema.org/a/#{asciicast_id}.js" id="asciicast-#{asciicast_id}" async="async"></script>)
       end
     end
   end

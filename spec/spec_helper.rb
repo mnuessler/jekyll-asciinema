@@ -1,17 +1,18 @@
-$LOAD_PATH.unshift File.expand_path('../../lib', __FILE__)
+# frozen_string_literal: true
+
+$LOAD_PATH.unshift File.expand_path('../lib', __dir__)
 
 if ENV['TRAVIS']
   require 'coveralls'
   Coveralls.wear!
 end
 
-require 'jekyll-asciinema'
+require 'jekyll_asciinema'
 
 TEST_DIR = File.dirname(__FILE__)
-TMP_DIR  = File.expand_path("../tmp", TEST_DIR)
+TMP_DIR  = File.expand_path('../tmp', TEST_DIR)
 
 RSpec.configure do |config|
-
   def tmp_dir(*files)
     File.join(TMP_DIR, *files)
   end
@@ -24,9 +25,9 @@ RSpec.configure do |config|
     tmp_dir('dest', *files)
   end
 
-  def doc_with_content(content, opts = {})
+  def doc_with_content(_content, _opts = {})
     my_site = site
-    Jekyll::Document.new(source_dir('_test/doc.md'), {site: my_site, collection: collection(my_site)})
+    Jekyll::Document.new(source_dir('_test/doc.md'), { site: my_site, collection: collection(my_site) })
   end
 
   def collection(site, label = 'test')
@@ -35,9 +36,9 @@ RSpec.configure do |config|
 
   def site(opts = {})
     conf = Jekyll::Utils.deep_merge_hashes(Jekyll::Configuration::DEFAULTS, opts.merge({
-      "source"      => source_dir,
-      "destination" => dest_dir
-    }))
+                                                                                         'source' => source_dir,
+                                                                                         'destination' => dest_dir
+                                                                                       }))
     Jekyll::Site.new(conf)
   end
 
@@ -45,5 +46,4 @@ RSpec.configure do |config|
   config.expect_with :rspec do |c|
     c.syntax = :expect
   end
-
 end
