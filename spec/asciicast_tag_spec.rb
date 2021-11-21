@@ -13,14 +13,14 @@ describe Jekyll::Asciinema::AsciicastTag do
     doc.output  = Jekyll::Renderer.new(doc.site, doc).run
   end
 
-  context "valid asciicast ID" do
+  context "numeric asciicast ID" do
     let(:asciicast) { 1234 }
 
     context "valid tag" do
       let(:content) { "{% asciicast #{asciicast} %}" }
 
       it "produces the correct script tag" do
-        expect(output.strip).to eq(%Q{<script type="text/javascript" src="https://asciinema.org/a/#{asciicast}.js" id="asciicast-#{asciicast}" async="async"></script>})
+        expect(output.strip).to eq(%Q{<script src="https://asciinema.org/a/#{asciicast}.js" id="asciicast-#{asciicast}" async="async"></script>})
       end
     end
 
@@ -29,9 +29,40 @@ describe Jekyll::Asciinema::AsciicastTag do
       let(:content) { "{% asciicast   #{asciicast}    %}" }
 
       it "produces the correct script tag ignoring additional whitespace" do
-        expect(output.strip).to eq(%Q{<script type="text/javascript" src="https://asciinema.org/a/#{asciicast}.js" id="asciicast-#{asciicast}" async="async"></script>})
+        expect(output.strip).to eq(%Q{<script src="https://asciinema.org/a/#{asciicast}.js" id="asciicast-#{asciicast}" async="async"></script>})
       end
     end
+  end
+
+  context "alphanumeric asciicast ID" do
+    let(:asciicast) { 'HRNK602wzYvYY0VPA5yRAiuia' }
+
+    context "valid tag" do
+      let(:content) { "{% asciicast #{asciicast} %}" }
+
+      it "produces the correct script tag" do
+        expect(output.strip).to eq(%Q{<script src="https://asciinema.org/a/#{asciicast}.js" id="asciicast-#{asciicast}" async="async"></script>})
+      end
+    end
+
+    context "valid tag with quotes" do
+      let(:asciicast) { 'HRNK602wzYvYY0VPA5yRAiuia' }
+      let(:content) { "{% asciicast   '#{asciicast}'    %}" }
+
+      it "produces the correct script tag ignoring quotes" do
+        expect(output.strip).to eq(%Q{<script src="https://asciinema.org/a/#{asciicast}.js" id="asciicast-#{asciicast}" async="async"></script>})
+      end
+    end
+
+    context "valid tag with additional whitespace" do
+      let(:asciicast) { 'HRNK602wzYvYY0VPA5yRAiuia' }
+      let(:content) { "{% asciicast   #{asciicast}    %}" }
+
+      it "produces the correct script tag ignoring additional whitespace" do
+        expect(output.strip).to eq(%Q{<script src="https://asciinema.org/a/#{asciicast}.js" id="asciicast-#{asciicast}" async="async"></script>})
+      end
+    end
+
   end
 
   context "missing asciicast ID" do
